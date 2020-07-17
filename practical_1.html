@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #codeblock {
+        width: 100%;
+        padding: 50px;
+        text-align: center;
+        background-color: lightblue;
+        margin-top: 20px;
+    }
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+    
+    .column {
+        float: left;
+        width: 33.33%;
+        padding: 5%;
+    }
+    /* Clear floats after image containers */
+    
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+</style>
+
+<body style="background-color: rgb(105, 25, 105);">
+
+    <h3 style="color:red">
+        Practical-1 : Create a Web page including HTML basic skeleton using:
+        <br>1. HTML Editor
+        <br>2. Online Sandbox Environment </h3>
+    <button onclick="open_code()" style="border-radius:25px ;width:360px;height:75px;padding:10px;background-color:red ;">show code</button>
+
+    <pre id="code" style="color:azure">
+        &lt;!doctype html&gt;
+        &lt;html&gt;
+
+        &lt;hea=d&gt;
+            &lt;meta charset="UTF-8"&gt;
+            &lt;title&gt;Assignment 1&lt;/title&gt;
+        &lt;/head&gt;
+
+        &lt;body style="background-color: black;color: aliceblue;"&gt;
+            &lt;h1 style="text-align:center"&gt; My Webpage &lt;/h1&gt;
+            &lt;br&gt;
+            &lt;h3 style="font-style: italic;text-align:center;"&gt;Aut viam envenian aut faciam&lt;/h3&gt;
+            &lt;br&gt;
+
+            &lt;h2&gt; About me &lt;/h2&gt;
+            &lt;p style="font-size: large;"&gt; I am Rishik Mishra ,I am a deep learning enthusiast with focus on applications in biomedical imaging analysis.
+        &lt;/body&gt;
+
+        &lt;/html&gt;
+    </pre>
+
+    <script>
+        function open_code() {
+            var x = document.getElementById("code");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+    <br>
+    <h1 style="color: azure;">Output</h1>
+    <div class="row">
+        <div class="column">
+            <h2 style="color:azure;align=center">Offline HTML Editor</h2>
+            <img src="C:\Users\rishik\Desktop\assignmet_1_1.JPG" alt="practical 1 screenshot" style="width:720px;height :480px;padding:5%">
+        </div>
+        <div class="column">
+            <h2 style="color:azure;align:center">Online HTML Editor</h2>
+            <img src="C:\Users\rishik\Desktop\assignment_1_2.JPG" alt="practical 1 2nd screenshot" style="width:720px;height :480px;padding:5%">
+        </div>
+    </div>
+    <br>
+
+    <br>
+</body>
+
+</html>

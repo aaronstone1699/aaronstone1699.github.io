@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .navigator a {
+        float: left;
+        color: #b9b9b9;
+        text-align: justify;
+        padding: 5px 25px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    
+    .navigator a:hover {
+        float: left;
+        color: #ffffff;
+        text-align: justify;
+        padding: 5px 25px;
+        text-decoration: none;
+        background-color: rgb(88, 88, 88);
+    }
+    
+    .card {
+        display: block;
+        border-radius: 10px;
+        color: gray;
+        padding: 10px;
+        font-size: 20px;
+        box-shadow: 1px 1px 2px black, 0 0 10px darkslategray, 0 0 5px gray;
+        overflow-wrap: normal;
+    }
+    
+    .container {
+        padding: 40px;
+        float: left;
+    }
+    
+    button {
+        background-color: palevioletred;
+        border-radius: 10px;
+        width: 360px;
+        padding: 10px;
+        margin: auto;
+        display: block;
+        border-color: azure;
+        color: azure;
+        font-size: 25px;
+        outline: none;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    p {
+        max-width: 360px;
+        text-align: justify;
+    }
+    
+    button:active {
+        background-color: rgb(78, 76, 167);
+        border-radius: 10px;
+        padding: 10px;
+        width: 360px;
+        margin: auto;
+        display: block;
+        border-color: azure;
+        font-size: 25px;
+        color: azure;
+        outline: none;
+    }
+</style>
+
+<body style="background-color:rgb(0, 0, 0); color:rgb(216, 216, 216) ;font-size: 20px;margin-top:60px;">
+
+
+
+
+
+    <div class=navigator style="background-color: rgb(39, 39, 39);
+            position:fixed;
+            top:0;
+            width:100%;
+            display: flex;
+            flex-direction: row;
+            min-height:30px;
+            align-items:justify;
+            justify-content: center;
+  
+            ">
+        <ul>
+
+            <a href="#top">HOME</a>
+            <a href="#aboutus">ABOUT US</a>
+            <a href="#team">TEAM</a>
+            <a href="#tech">TECHNOLOGIES</a>
+            <a href="#contact">CONTACT</a>
+        </ul>
+    </div>
+
+
+
+    <div style="
+            
+            
+            display: flex;
+            flex-direction: row;
+            
+            align-items:center;
+            justify-content: center;
+  
+            "><img src=banner.jpg style="width: 100%;">
+        <div class="texty" style="position:absolute;top:70px;left:16px;font-size:70px;">Practical 8</div>
+    </div>
+
+
+    <div id="team" style="
+        width:100%;
+       
+        display: flex;
+        margin:15px;
+        flex-direction: row;
+        align-items:center;
+        justify-content: center;
+        color:rgb(255, 255, 255);
+        padding :5px;"> TEAM MEMBERS
+    </div>
+    <div class="flex-container" style="width:100%;
+  
+        display: flex;
+        flex-direction: row;
+        margin:15px;
+        padding :5px;">
+
+
+        <div style="background-color: rgb(233, 207, 91);
+            width: 25%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: row;
+            padding :10px;
+            align-items:center;
+            justify-content: center;
+  
+            border-radius:50%;
+            margin-right: 3%;margin-left:3%"><img src=1.png style="width: 100%;border-radius:inherit">
+        </div>
+
+        <div style="background-color:  rgb(233, 207, 91);
+            width: 25%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: row;
+            padding :10px;
+            border-radius:50%;
+            align-items:center;
+            justify-content: center;
+  
+            margin-right: 3%;margin-left:3%"><img src=2.png style="width: 100%;border-radius:inherit">
+        </div>
+
+
+        <div style="background-color:  rgb(233, 207, 91);
+            width: 25%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: row;
+            padding :10px;
+            border-radius:50%;
+            align-items:center;
+            justify-content: center;
+  
+            margin-right: 3%;margin-left:3%"><img src=3.png style="width: 100%;border-radius:inherit">
+        </div>
+
+        <div style="background-color:  rgb(233, 207, 91);
+            width: 25%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: row;
+            padding :10px;
+            align-items:center;
+            justify-content: center;
+  
+            border-radius:50%;
+            margin-right: 3%;margin-left:3%"><img src=9.png style="width: 100%;height:100%;border-radius:inherit">
+        </div>
+
+
+    </div>
+    <div id="aboutus" style="
+        width:100%;
+        min-height: 30px;
+        display: flex;
+        flex-direction: row;
+        margin:15px;
+        align-items:center;
+        justify-content: center;
+        color:rgb(255, 255, 255);
+        padding :5px;"> ABOUT US
+    </div>
+    <div class="flex-container" style="width:100%;
+        max-height: 550px;
+        display: flex;
+        flex-direction: row;
+        margin:15px;
+        padding:5px;
+        ">
+
+        <div style="background-color: rgb(97, 97, 97);
+            width: 60%;
+            max-height: 100%;
+            
+            align-items:center;
+            justify-content: center;
+            overflow:hidden;
+            padding:10px;
+            ">
+            <h2>About Projects</h2>
+            <br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis laudantium autem vitae fugit, asperiores, vero dolores distinctio corporis molestias at dolorem quae ipsam repudiandae laboriosam tenetur magni, animi cupiditate et ab
+            nostrum laborum? Consequuntur reiciendis laboriosam excepturi, labore quam nemo eius iure suscipit asperiores, corrupti exercitationem culpa consequatur maxime minima modi? Ea error consequatur nobis quaerat odit rerum, officia facere labore
+            sed placeat voluptas tempore reiciendis beatae, eos omnis nisi aspernatur sequi minima dolorum sint eum atque! Sequi nam quam beatae, quaerat ea ducimus accusantium eligendi quos quasi labore mollitia est aut provident repellat modi voluptatibus
+            tenetur aliquid facilis corporis hic sed nemo obcaecati. Veritatis, molestiae? Odit est tenetur reiciendis? Quam odit amet, quos unde cumque tempora sed earum doloremque deleniti autem maxime vitae officiis quod, at commodi sunt ab nulla officia
+            veritatis exercitationem, consectetur facilis eius dolores similique. Sit, fugiat quam. Vel explicabo excepturi libero expedita fuga enim laboriosam facilis esse, sit nihil consequatur. Possimus illum atque deleniti eos aspernatur nostrum
+            pariatur, id corrupti esse excepturi, officiis expedita eveniet eum iste accusantium aliquam ipsum iusto saepe velit. Autem minus nisi doloribus, nemo exercitationem dignissimos aperiam assumenda minima ipsa dolorum consequatur ipsam distinctio
+            ullam, quos eius saepe fugiat. Possimus, harum.
+        </div>
+        <div class="flex-container" style="width: 40%;
+            max-height: 80%;
+            display: flex;
+            flex-direction: column;
+            
+            
+           ">
+
+            <div style="
+                width: 90%;
+                max-height: 30%;
+          
+                padding:10px;
+                align-items:center;
+                justify-content: center;
+      
+                "><img src=p1.jpg style="width: 100%;height:100%;border-radius:inherit">
+
+            </div>
+            <div style="
+                width: 90%;
+                max-height: 30%;
+     
+                padding:10px;
+                align-items:center;
+                justify-content: center;
+      
+                "><img src=p2.jpg style="width: 100%;height:100%;border-radius:inherit">
+
+            </div>
+            <div style="
+                width: 90%;
+                max-height: 30%;
+            
+                align-items:center;
+                justify-content: center;
+                padding:10px;
+                
+                "> <img src=p3.jpg style="width: 100%;height:100%;border-radius:inherit">
+
+            </div>
+
+        </div>
+
+    </div>
+    <div id="tech" style="
+        width:100%;
+        min-height: 30px;
+        display: flex;
+        flex-direction: row;
+        margin:15px;
+        align-items:center;
+        justify-content: center;
+        color:rgb(255, 255, 255);
+        padding :5px;"> TECHNOLOGIES USED
+    </div>
+    <div class="flex-container" style="width:100%;
+        min-height: 100px;
+        display: flex;
+        flex-direction: row;
+        margin:15px;
+        padding :5px;">
+        <div class="tray">
+            <div class='container'>
+
+                <div class='card'>
+                    <img src="..\images\html back.png">
+                    <h2>Introduction to HTML</h2>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga vel molestiae eius a et quae culpa esse suscipit aliquid magnam provident, eum voluptates quis facere quod! Reiciendis repudiandae pariatur assumenda harum recusandae provident. At a laborum
+                        adipisci, reiciendis, nemo maxime labore facere saepe expedita repellat quisquam error nostrum exercitationem tenetur?
+                    </p>
+                    <br>
+                    <button onclick="location.href='css.html'">
+                    Read more
+                </button>
+                </div>
+            </div>
+            <div class='container'>
+                <div class='card'>
+                    <img src="..\images\bs back.png">
+                    <h2>Introduction to CSS</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex maxime quae id nobis natus aperiam architecto ab ipsa reprehenderit rem doloremque expedita facilis pariatur unde dolorem voluptas suscipit labore itaque a, adipisci at quia? Voluptatibus molestias
+                        laudantium odio nemo cum quae dolorem, modi aliquid eos atque et non tenetur. Recusandae?
+                    </p>
+                    <br>
+                    <button onclick="location.href='css.html'">
+                    Read more
+                </button>
+                </div>
+            </div>
+            <div class='container'>
+                <div class='card'>
+                    <img src="..\images\js back.png">
+                    <h2>Introduction to JavaScript</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore nostrum velit illo dolor, totam rem, harum possimus porro non atque exercitationem, odit vel recusandae pariatur modi quis suscipit voluptatem distinctio ratione quibusdam ipsa iste omnis
+                        hic. Voluptate, quaerat sit? Ullam obcaecati perspiciatis numquam voluptates accusamus voluptate consectetur quis fugit quas.
+                    </p>
+                    <br>
+                    <button onclick="location.href='javascript.html'">
+                    Read more
+                </button>
+                </div>
+            </div>
+            <div class='container'>
+                <div class='card'>
+                    <img src="..\images\bs back.png">
+                    <h2>Introduction to Bootstrap</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam, totam? Obcaecati quidem suscipit cupiditate debitis iusto dignissimos maiores, id sapiente non incidunt adipisci, aperiam voluptatibus esse qui eum nostrum fuga vitae excepturi eveniet tenetur
+                        hic corporis quae. Autem ex non, ab cupiditate ducimus culpa explicabo, itaque, possimus deserunt laudantium
+                    </p>
+                    <br>
+                    <button onclick="location.href='bootstrap.html'">
+                    Read more
+                </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="contact" style="
+        width:100%;
+        min-height: 30px;
+        display: flex;
+        flex-direction: row;
+        margin:15px;
+        align-items:center;
+        justify-content: center;
+        color:rgb(255, 255, 255);
+        padding :5px;"> CONTACT
+    </div>
+
+    <div style="background-color: rgb(99, 65, 161);
+            width:100%;
+            min-height: 30px;
+            display: flex;
+            flex-direction: row;
+            margin:15px;
+            align-items:center;
+            justify-content: center;
+  
+            padding :5px;">
+        Website created by Rishik Mishra
+        <br>
+        <a style="color: blue;" href=#top>back to top</a>
+    </div>
+
+
+
+
+
+
+    <br>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .counte {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body style="background-color:rgb(105, 25, 105);">
+    <div class="counte">
+        <button class="dec" style="margin: 20px;width:70px; font-size:50px;padding:10px;color:red;background-color:black;">-</button>
+
+        <h1 class="curr" style="margin:20px;color:aliceblue;font-size:100px;">(..)</h1>
+
+        <button class="inc" style="margin: 20px; width:70px;font-size:50px;padding:10px;color:green;background-color:black;">+</button>
+    </div>
+    <script>
+        let numb = document.querySelector('.curr');
+        let decrease = document.querySelector('.dec');
+        let increase = document.querySelector('.inc');
+
+        let count = 0;
+
+        update();
+
+        increase.addEventListener("click", () => {
+            count++;
+            update();
+        });
+
+        decrease.addEventListener("click", () => {
+            count--;
+            update();
+        });
+
+        function update() {
+            numb.innerHTML = count;
+        };
+    </script>
+</body>
+
+</html>

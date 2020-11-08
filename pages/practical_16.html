@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=dcheckedice-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <style>
@@ -34,6 +34,11 @@
     }
     /* Set all odd list items to a different color (zebra-stripes) */
     
+    ul li:nth-child(odd) {
+        background: #f9f9f9;
+    }
+    /* Darker background-color on hover */
+    
     ul li:hover {
         background: #ddd;
     }
@@ -44,9 +49,9 @@
         text-decoration: line-through;
     }
     /* Add a "checked" mark when clicked on */
-    /* Style the removeTask button */
+    /* Style the close button */
     
-    .removeTask {
+    .close {
         position: absolute;
         right: 0;
         top: 0;
@@ -54,7 +59,7 @@
         padding: 10px 20px 10px 20px;
     }
     
-    .removeTask:hover {
+    .close:hover {
         background-color: #d61b63;
         color: white;
     }
@@ -89,7 +94,7 @@
     }
     /* Style the "Add" button */
     
-    .addTask {
+    .addBtn {
         border-radius: 8px;
         padding: 10px 20px 10px 20px;
         background: #96bbb9;
@@ -100,7 +105,7 @@
         margin: 5px;
     }
     
-    .addTask:hover {
+    .addBtn:hover {
         background-color: #37c4bd;
     }
 </style>
@@ -114,11 +119,11 @@ background-image: linear-gradient(to top,rgba(95, 95, 95,0),rgba(95, 95, 95,1)) 
         <h2>To Do List</h2>
         <div class="inserter">
             <input type="text" id="myInput" placeholder="Item">
-            <span onclick="newElement()" class="addTask">&#x271A</span>
+            <span onclick="newElement()" class="addBtn">&#x271A</span>
         </div>
     </div>
 
-    <ul id="tasks">
+    <ul id="myUL">
         <li>do this</li>
         <li>do that</li>
 
@@ -130,16 +135,16 @@ background-image: linear-gradient(to top,rgba(95, 95, 95,0),rgba(95, 95, 95,1)) 
         for (i = 0; i < myNodelist.length; i++) {
             var span = document.createElement("SPAN");
             var txt = document.createTextNode("\u00D7");
-            span.className = "removeTask";
+            span.className = "close";
             span.appendChild(txt);
             myNodelist[i].appendChild(span);
         }
 
-        // Click on a removeTask button to hide the current list item
-        var removeTask = document.getElementsByClassName("removeTask");
+        // Click on a close button to hide the current list item
+        var close = document.getElementsByClassName("close");
         var i;
-        for (i = 0; i < removeTask.length; i++) {
-            removeTask[i].onclick = function() {
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
                 var div = this.parentElement;
                 div.style.display = "none";
             }
@@ -147,9 +152,9 @@ background-image: linear-gradient(to top,rgba(95, 95, 95,0),rgba(95, 95, 95,1)) 
 
         // Add a "checked" symbol when clicking on a list item
         var list = document.querySelector('ul');
-        list.addcheckedentListener('click', function(checked) {
-            if (checked.target.tagName === 'LI') {
-                checked.target.classList.toggle('checked');
+        list.addEventListener('click', function(ev) {
+            if (ev.target.tagName === 'LI') {
+                ev.target.classList.toggle('checked');
             }
         }, false);
 
@@ -164,18 +169,18 @@ background-image: linear-gradient(to top,rgba(95, 95, 95,0),rgba(95, 95, 95,1)) 
                 alert("You must write something!");
             } else {
 
-                document.getElementById("tasks").appendChild(li);
+                document.getElementById("myUL").appendChild(li);
             }
             document.getElementById("myInput").value = "";
 
             var span = document.createElement("SPAN");
             var txt = document.createTextNode("\u00D7");
-            span.className = "removeTask";
+            span.className = "close";
             span.appendChild(txt);
             li.appendChild(span);
 
-            for (i = 0; i < removeTask.length; i++) {
-                removeTask[i].onclick = function() {
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function() {
                     var div = this.parentElement;
                     div.style.display = "none";
                 }

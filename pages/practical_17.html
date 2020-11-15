@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-image:url('..\images\night.jpg');
+background-repeat:no-repeat;background-size:cover;color:aliceblue; 
+    display: flexbox;
+    
+    align-items: center;
+    text-align:center;
+    
+    ">
+
+    <p id="time" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;font-size:150px;"></p>
+    <p id="greet" style="font-size:80px;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"></p>
+    <p id="date" style="font-size:50px"></p>
+
+    <script>
+        var curr_time = function() {
+            var date = new Date();
+            var mos = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+            var day = [
+                'Sunday',
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday'
+            ];
+            var h = date.getHours();
+            var m = date.getMinutes();
+            var s = date.getSeconds();
+            var time = h + ':' + m + ':' + s
+            var d = date.getDate();
+            var mo = date.getMonth();
+            var y = date.getFullYear();
+            var da = date.getDay();
+            var date = day[da] + ' ' + d + ' ' + ' ' + mos[mo] + ' ' + y
+
+            var tim = h;
+            var bgr;
+            var grt;
+            if (tim < 4) {
+                document.body.style.backgroundImage = "url('..\images\early-night.jpg')";
+                grt = "Good Night Visitor";
+            } else if (tim < 7) {
+                document.body.style.backgroundImage = "url('..\images\early-morning.jpg')";
+                grt = "Good Morning Visitor";
+            } else if (tim < 12) {
+                document.body.style.backgroundImage = "url('..\images\morning.jpg')";
+                grt = "Good Morning Visitor";
+            } else if (tim < 16) {
+                document.body.style.backgroundImage = "url('..\images\afternoon.jpg')";
+                grt = "Good Afternoon Visitor";
+            } else if (tim < 19) {
+                document.body.style.backgroundImage = "url('..\images\evening.jpg')";
+                grt = "Good evening Visitor";
+            } else {
+                document.body.style.backgroundImage = "url('..\images\night.jpg')";
+                grt = "Good night Visitor";
+            }
+
+
+            document.getElementById("greet").innerHTML = grt;
+
+            document.getElementById("time").innerHTML = time;
+            document.getElementById("date").innerHTML = date;
+
+            document.body.style.backgroundImage = string(url(bgr));
+
+        }
+
+        setInterval(curr_time, 1000);
+    </script>
+
+
+
+</body>
+
+</html>

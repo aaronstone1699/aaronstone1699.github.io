@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:300);
+    @import url(https://fonts.googleapis.com/css?family=Merriweather+Sans:700);
+    body {
+        background-color: pink;
+        background-size: cover;
+        height: 100%;
+        font-family: 'Merriweather Sans', sans-serif;
+        color: #666;
+    }
+    
+    #signup {
+        width: 600px;
+        height: auto;
+        padding: 20px;
+        background: #fff;
+        margin: 80px auto;
+        position: relative;
+        min-height: 300px;
+    }
+    
+    #fieldsets {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    input[type=tel],
+    textarea {
+        display: block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        padding: 8px;
+        margin-bottom: 8px;
+        position: relative;
+    }
+    
+    textarea:focus {
+        outline: none;
+        border: 1px solid darken(#2cbab2, 10%);
+    }
+    
+    input[type=radio] {
+        margin: 6px;
+        display: inline-block;
+    }
+    
+    fieldset {
+        border: none;
+        position: absolute;
+        left: -640px;
+        width: 600px;
+        padding: 10px 0;
+        transition: all 0.3s linear;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s linear;
+        -ms-transition: all 0.3s linear;
+        opacity: 0;
+    }
+    
+    fieldset.current {
+        left: 20px;
+        opacity: 1;
+    }
+    
+    fieldset.next {
+        left: 640px;
+    }
+    
+    input[type=submit] {
+        display: none;
+        border: none;
+    }
+    
+    #section-tabs {
+        font-size: 0.8em;
+        height: 50px;
+        position: relative;
+        margin-top: -50px;
+        margin-bottom: 50px;
+        padding: 0;
+        font-weight: bold;
+        list-style: none;
+        text-transform: uppercase;
+    }
+    
+    #section-tabs.li {
+        color: #a7a7a7;
+    }
+    
+    #section-tabs.li.span {
+        color: #bababa;
+    }
+    
+    #section-tabs.li {
+        border-left: 1px solid #aaa;
+        text-decoration: none;
+        padding: 0 6px;
+        float: left;
+        width: 25%;
+        box-sizing: border-box;
+        text-align: center;
+        font-weight: bold;
+        line-height: 30px;
+        background: #ddd;
+        position: relative;
+    }
+    
+    #section-tabs.li::after {
+        content: "";
+        display: block;
+        margin-left: 0;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    
+    #section-tabs.li.current {
+        opacity: 1;
+        background: #fff;
+        z-index: 999;
+        border-left: none;
+    }
+    
+    #section-tabs.li.current::after {
+        border: 15px solid transparent;
+        border-left: 15px solid #2cbab2;
+    }
+    
+    .error {
+        color: #bf2424;
+        display: block;
+    }
+    
+    input.error,
+    textarea.error {
+        border-color: #bf2424;
+    }
+    
+    input.error,
+    textarea.error:focus {
+        border-color: #bf2424;
+    }
+    
+    label.error {
+        margin-bottom: 20px;
+    }
+    
+    input.valid {
+        color: green;
+    }
+    
+    label.valid {
+        position: absolute;
+        right: 20px;
+    }
+    
+    input+.valid,
+    textarea+.valid {
+        display: none;
+    }
+    
+    .valid+.valid {
+        display: inline;
+        position: absolute;
+        right: 10px;
+        margin-top: -36px;
+        color: green;
+    }
+    
+    .btn {
+        border: none;
+        padding: 8px;
+        background: #2cbab2;
+        cursor: pointer;
+        transition: all 0.3s;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+    }
+    
+    .btn:hover {
+        background: darken(#2cbab2, 6%);
+    }
+    
+    .btn {
+        color: #fff;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-family: 'Merriweather Sans', sans-serif;
+    }
+</style>
+
+<body>
+    <script>
+        $("body").on("keyup", "form", function(e) {
+            if (e.which == 13) {
+                if ($("#next").is(":visible") && $("fieldset.current").find("input, textarea").valid()) {
+                    e.preventDefault();
+                    nextSection();
+                    return false;
+                }
+            }
+        });
+
+
+        $("#next").on("click", function(e) {
+            console.log(e.target);
+            nextSection();
+        });
+
+        $("form").on("submit", function(e) {
+            if ($("#next").is(":visible") || $("fieldset.current").index() < 3) {
+                e.preventDefault();
+            }
+        });
+
+        function goToSection(i) {
+            $("fieldset:gt(" + i + ")").removeClass("current").addClass("next");
+            $("fieldset:lt(" + i + ")").removeClass("current");
+            $("li").eq(i).addClass("current").siblings().removeClass("current");
+            setTimeout(function() {
+                $("fieldset").eq(i).removeClass("next").addClass("current active");
+                if ($("fieldset.current").index() == 3) {
+                    $("#next").hide();
+                    $("input[type=submit]").show();
+                } else {
+                    $("#next").show();
+                    $("input[type=submit]").hide();
+                }
+            }, 80);
+
+        }
+
+        function nextSection() {
+            var i = $("fieldset.current").index();
+            if (i < 3) {
+                $("li").eq(i + 1).addClass("active");
+                goToSection(i + 1);
+            }
+        }
+
+        $("li").on("click", function(e) {
+            var i = $(this).index();
+            if ($(this).hasClass("active")) {
+                goToSection(i);
+            } else {
+                alert("Please complete previous sections first.");
+            }
+        });
+    </script>
+    <form id="signup" action="somewhere" method="POST">
+        <ul id="section-tabs">
+            <li class="current active"><span>1.</span> Step-1</li>
+            <li><span>2.</span> Step-2</li>
+            <li><span>3.</span> Step-3</li>
+
+        </ul>
+        <div id="fieldsets">
+            <fieldset class="current">
+                <label for="email">Email:</label>
+                <input name="email" type="email" class="required email" />
+                <label name="password" for="password">Password:</label>
+                <input type="password" minlength="10" class="required">
+            </fieldset>
+            <fieldset class="next">
+                <label for="username">Medium:</label>
+                <input name="username" type="text">
+                <label for="username">Github:</label>
+                <input name="username" type="text">
+                <label for="username">LinkedIn:</label>
+                <input name="username" type="text">
+            </fieldset>
+            <fieldset class="next">
+                <label for="username">First Name:</label>
+                <input name="username" type="text">
+                <label for="username">Last Name:</label>
+                <input name="username" type="text">
+                <label for="username">Mobile No.:</label>
+                <input name="username" type="text">
+
+            </fieldset>
+
+            <a class="btn" id="next">Next Section ▷</a>
+            <input type="submit" class="btn">
+        </div>
+    </form>
+
+
+</body>
+
+</html>

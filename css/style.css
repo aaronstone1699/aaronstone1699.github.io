@@ -690,6 +690,82 @@ a:hover {
   transform: rotate(-135deg);
   opacity: 0.9;
 }
+.timeline-container {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+}
+
+/* Timeline line */
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  transform: translateX(-50%);
+}
+
+/* Timeline block */
+.timeline-block {
+  position: relative;
+  width: 45%;
+  padding: 20px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+/* Positioning blocks to left and right */
+.timeline-block.left {
+  left: 0;
+}
+
+.timeline-block.right {
+  left: 55%;
+}
+
+.timeline-block:hover {
+  transform: scale(1.05);
+}
+
+/* Title, date, and description */
+.timeline-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.timeline-title p {
+  /* Your styles for the <p> inside .timeline-title */
+  font-size: 0.8em; /* example, adjust as needed */
+  color: #333333c2; /* example, adjust as needed */
+  margin: 0; /* example, adjust as needed */
+}
+
+.timeline-date {
+  font-size: 0.9em;
+  color: #777;
+}
+
+.timeline-description {
+  margin-top: 10px;
+  display: none;
+  font-size: 0.9em;
+}
+
+/* Center the line */
+@media (max-width: 768px) {
+  .timeline-block {
+    width: 90%;
+    left: 5%;
+  }
+  .timeline-line {
+    left: 5%;
+  }
+}
 
 /*======================================
 //--//-->   INTRO
